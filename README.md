@@ -8,16 +8,34 @@ The table you can see below is my estimation of "difficulty level" of each indiv
   - maths (congruences and fundamental number theory, ...)
 - With 3 points, I find those problems not solvable with brute force. Many of them include either working with enormous input sizes or looping million (if not billion) times. A clever workaround and efficiency is key here, I sometimes spent days cracking and trying out solutions on problems like these.
 
-|      | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |   AVG   |
-|------|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:-------:|
-| 2015 |   |   |   |   |   |   |   |   |   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | #DIV/0! |
-| 2016 |   |   |   |   |   |   |   |   |   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | #DIV/0! |
-| 2017 |   |   |   |   |   |   |   |   |   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | #DIV/0! |
-| 2018 |   |   |   |   |   |   |   |   |   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | #DIV/0! |
-| 2019 |   |   |   |   |   |   |   |   |   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | #DIV/0! |
-| 2020 | 1 | 1 | 1 | 1 | 1 | 1 | 2 | 1 | 1 |  3 |  2 |  1 |  2 |  2 |  2 |  2 |  2 |  1 |  3 |  2 |  1 |  3 |  2 |  2 |  2 |    1.68 |
-| 2021 |   |   |   |   |   |   |   |   |   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | #DIV/0! |
-| 2022 |   |   |   |   |   |   |   |   |   |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    |    | #DIV/0! |
+|     |   2015  |   2016  |   2017  |   2018  |   2019  | 2020 |   2021  |   2022  |
+|-----|:-------:|:-------:|:-------:|:-------:|:-------:|:----:|:-------:|:-------:|
+|  1  |         |         |         |         |         |    1 |         |         |
+|  2  |         |         |         |         |         |    1 |         |         |
+|  3  |         |         |         |         |         |    1 |         |         |
+|  4  |         |         |         |         |         |    1 |         |         |
+|  5  |         |         |         |         |         |    1 |         |         |
+|  6  |         |         |         |         |         |    1 |         |         |
+|  7  |         |         |         |         |         |    2 |         |         |
+|  8  |         |         |         |         |         |    1 |         |         |
+|  9  |         |         |         |         |         |    1 |         |         |
+|  10 |         |         |         |         |         |    3 |         |         |
+|  11 |         |         |         |         |         |    2 |         |         |
+|  12 |         |         |         |         |         |    1 |         |         |
+|  13 |         |         |         |         |         |    2 |         |         |
+|  14 |         |         |         |         |         |    2 |         |         |
+|  15 |         |         |         |         |         |    2 |         |         |
+|  16 |         |         |         |         |         |    2 |         |         |
+|  17 |         |         |         |         |         |    2 |         |         |
+|  18 |         |         |         |         |         |    1 |         |         |
+|  19 |         |         |         |         |         |    3 |         |         |
+|  20 |         |         |         |         |         |    2 |         |         |
+|  21 |         |         |         |         |         |    1 |         |         |
+|  22 |         |         |         |         |         |    3 |         |         |
+|  23 |         |         |         |         |         |    2 |         |         |
+|  24 |         |         |         |         |         |    2 |         |         |
+|  25 |         |         |         |         |         |    2 |         |         |
+| AVG | #DIV/0! | #DIV/0! | #DIV/0! | #DIV/0! | #DIV/0! | 1.68 | #DIV/0! | #DIV/0! |
 
 # 2020
 This was the first year, when I first heard about the competition. During that time, I was doing master's studies and was really excited to jump into this.
