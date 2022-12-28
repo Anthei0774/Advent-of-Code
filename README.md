@@ -37,6 +37,7 @@ The table you can see below is my estimation of "difficulty level" of each indiv
 # 2015
 
 # 2016
+First
 
 # 2017
 
@@ -45,8 +46,9 @@ The table you can see below is my estimation of "difficulty level" of each indiv
 # 2019
 
 # 2020
-This was the first year, when I first heard about the competition. During that time, I was doing master's studies and was really excited to jump into this.
+This was the year when I first heard about the competition. During that time I was doing master's studies and was really excited to jump into this. The story goes as we are on vacation, gathering star shaped money to pay off our room reservation.
 
 # 2021
 
 # 2022
+I finished the year's challenge with 39 points gathered during December. This time we were delving inside a deep jungle, gathering star shaped magic fruits for Santa's reindeers and saving elephants from an active volcano.
