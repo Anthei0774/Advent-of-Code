@@ -11,11 +11,11 @@ with open("2024/inputs/1.txt", "r") as f:
 ################################################################################
 # PART 1
 
-locations = locations.split('\n')
+locations = locations.split("\n")
 N = len(locations)
 
 # transform into [l1, l2], where l1, l2 are sorted lists
-locations = [l.split('   ') for l in locations]
+locations = [l.split("   ") for l in locations]
 locations = [tuple(map(int, l)) for l in locations]
 locations = [[locations[j][i] for j in range(N)] for i in range(2)]
 locations = [sorted(l) for l in locations]
