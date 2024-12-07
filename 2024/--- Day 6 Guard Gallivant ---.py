@@ -1,3 +1,5 @@
+from tqdm import tqdm
+
 map = """....#.....
 .........#
 ..........
@@ -82,9 +84,7 @@ del unique_locations[start_pos]
 # idea II: since we stored the original path, we can fast forward the guard's route to the point where he would hit the obstruction ==> but we need to store the indices of positions first stepped on, hence the memorization in previous part
 
 good_locations = []
-for progress, loc in enumerate(unique_locations):
-    if progress % 100 == 0:
-        print("Progress:", progress)
+for loc in tqdm(unique_locations):
 
     obstacles.append(loc)
 
