@@ -3,7 +3,7 @@ masses = """12
 1969
 100756"""
 
-with open("2019/inputs/1.txt", "r") as f:
+with open("2019/inputs/1.txt") as f:
     masses = f.read()
 
 masses = masses.split("\n")

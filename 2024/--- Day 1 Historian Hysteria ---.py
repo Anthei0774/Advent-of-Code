@@ -5,7 +5,7 @@ locations = """3   4
 3   9
 3   3"""
 
-with open("2024/inputs/1.txt", "r") as f:
+with open("2024/inputs/1.txt") as f:
     locations = f.read()
 
 ################################################################################

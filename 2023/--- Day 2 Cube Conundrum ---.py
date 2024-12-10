@@ -11,7 +11,7 @@ games = games.replace(" ", "").split("\n")
 
 for i, g in enumerate(games):
 
-    g = g.replace("blue", "B").replace("green", "G").replace("red", "R")
+    g = g.replace("blue", "B").replace("green", "G").replace("red")
     g = g[g.find(":") + 1:]
 
     g = g.split(";")

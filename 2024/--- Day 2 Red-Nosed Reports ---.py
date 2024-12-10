@@ -8,7 +8,7 @@ reports = """7 6 4 2 1
 8 6 4 4 1
 1 3 6 7 9"""
 
-with open("2024/inputs/2.txt", "r") as f:
+with open("2024/inputs/2.txt") as f:
     reports = f.read()
 
 reports = reports.split("\n")

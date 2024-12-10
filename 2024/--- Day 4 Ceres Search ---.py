@@ -9,7 +9,7 @@ SAXAMASAAA
 MAMMMXMMMM
 MXMXAXMASX"""
 
-# with open("2024/inputs/4.txt", "r") as f:
+# with open("2024/inputs/4.txt") as f:
 #     word_search = f.read()
 
 word_search = word_search.split("\n")

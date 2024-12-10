@@ -6,7 +6,7 @@ pqr3stu8vwx
 a1b2c3d4e5f
 treb7uchet"""
 
-with open("2023/inputs/1.txt", "r") as f:
+with open("2023/inputs/1.txt") as f:
     lines = f.read()
 
 lines = lines.split("\n")
@@ -40,7 +40,7 @@ xtwone3four
 zoneight234
 7pqrstsixteen"""
 
-with open("2023/inputs/1.txt", "r") as f:
+with open("2023/inputs/1.txt") as f:
     lines = f.read()
 
 lines = lines.split("\n")

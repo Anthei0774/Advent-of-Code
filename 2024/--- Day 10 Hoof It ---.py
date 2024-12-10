@@ -7,7 +7,7 @@ height_map = """89010123
 01329801
 10456732"""
 
-with open("2024/inputs/10.txt", "r") as f:
+with open("2024/inputs/10.txt") as f:
     height_map = f.read()
 
 height_map = height_map.split("\n")
