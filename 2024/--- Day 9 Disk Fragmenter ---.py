@@ -4,48 +4,64 @@ with open("2024/inputs/9.txt") as f:
     diskmap = f.read()
 
 diskmap = list(map(int, diskmap))
+assert len(diskmap) % 2 == 1
 
+# process
+layout_orig = []
+id = 0
+for i in range(0, len(diskmap), 2):
 
-def process_diskmap_to_layout(diskmap):
-    layout = []
-    id = 0
+    layout_orig.append((id, diskmap[i]))
+    id += 1
 
-    assert len(diskmap) % 2 == 1
-    for i in range(0, len(diskmap), 2):
-
-        for j in range(diskmap[i]):
-            layout.append(id)
-        id += 1
-
-        if i != len(diskmap) - 1:
-            for j in range(diskmap[i + 1]):
-                layout.append("")
-
-    return layout
+    if (i != len(diskmap) - 1) and (diskmap[i + 1] != 0):
+        layout_orig.append(diskmap[i + 1])
 
 ################################################################################
 # PART 1
 
+layout = layout_orig.copy()
 
-layout = process_diskmap_to_layout(diskmap)
-
+i = 0
 while True:
 
-    while layout[-1] == "":
-        layout.pop(-1)
+    while (i < len(layout)) and (type(layout[i]) != int):
+        i += 1
 
-    if "" in layout:
-        i = layout.index("")
-        layout[i] = layout.pop(-1)
-    else:
+    if i == len(layout):
         break
 
-print("Checksum:", sum(i * layout[i] for i in range(len(layout))))
+    free_space = layout[i]
 
-################################################################################
+    assert type(layout[-1]) == tuple
+
+    if layout[-1][1] == free_space:
+        layout[i] = layout[-1]
+        layout = layout[:-1]
+    elif layout[-1][1] < free_space:
+        layout[i] -= layout[-1][1]
+        layout.insert(i, layout[-1])
+        layout = layout[:-1]
+    else:
+        layout[i] = (layout[-1][0], free_space)
+        layout[-1] = (layout[-1][0], layout[-1][1] - free_space)
+
+    if type(layout[-1]) != tuple:
+        layout = layout[:-1]
+
+S = 0
+m = 0
+for block in layout:
+    for i in range(block[1]):
+        S += (m * block[0])
+        m += 1
+
+print("Checksum:", S)
+
+###############################################################################
 # PART 2
 
-layout = process_diskmap_to_layout(diskmap)
+layout = layout_orig.copy()
 l = len(layout)
 
 id = layout[-1]
