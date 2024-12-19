@@ -2,7 +2,7 @@
 1.1,,,,,1,,,,1,1,This sheet is inspired by: https://www.reddit.com/r/adventofcode/comments/18qgcuh/all_years_my_totally_subjective_and_a_little_bit
 1.2,,,,,1,,,,2,1,
 2.1,,,,,,,,,1,1,1 = straightforward implementation to solution
-2.2,,,,,,,,,1,2,2 = still an easy problem if we know some fundamental data structures and ; just needs a bit more time and thinking
+2.2,,,,,,,,,1,2,2 = still an easy problem if we know some fundamental data structures and algorithms; just needs a bit more time and thinking
 3.1,,,,,,,,,1,1,3 = some good idea needed in addition to 2; making it a decently hard problem
 3.2,,,,,,,,,1,2,4 = more edge cases / workarounds in addition to the complexity of 3; challenging
 4.1,,,,,,,,,1,1,5 = generally hard problem; need to think every step twice; code has to be optimal
