@@ -50,59 +50,98 @@ program = list(map(int, program))
 ################################################################################
 # PART 1
 
-outputs = []
 
-i = 0
-while i < len(program):
-    # print("i:", i)
-    # print("Registers: A =", A, ", B =", B, ", C =", C)
+def run_program(registers):
 
-    values = [0, 1, 2, 3, A, B, C]
+    [A, B, C] = registers
 
-    opcode = program[i]
-    operand = program[i + 1]
+    outputs = []
+    i = 0
+    while i < len(program):
+        # print("i:", i)
+        # print("Registers: A =", A, ", B =", B, ", C =", C)
 
-    # adv = A-Division
-    if opcode == 0:
-        A = A // (2 ** values[operand])
+        values = [0, 1, 2, 3, A, B, C]
 
-    # bxl = B-XOR-Literal
-    elif opcode == 1:
-        B = B ^ operand
+        opcode = program[i]
+        operand = program[i + 1]
 
-    # bst = B-???
-    elif opcode == 2:
-        B = values[operand] % 8
+        # adv = A-Division
+        if opcode == 0:
+            A = A // (2 ** values[operand])
 
-    # jnz = Jump-Non-Zero
-    elif opcode == 3:
-        if A != 0:
-            i = operand
-            continue
+        # bxl = B-XOR-Literal
+        elif opcode == 1:
+            B = B ^ operand
 
-    # bxc = B-Xor-C
-    elif opcode == 4:
-        B = B ^ C
-    # out
-    elif opcode == 5:
-        outputs.append(values[operand] % 8)
+        # bst = B-???
+        elif opcode == 2:
+            B = values[operand] % 8
 
-    # bdv = B-Division
-    elif opcode == 6:
-        B = A // (2 ** values[operand])
+        # jnz = Jump-Non-Zero
+        elif opcode == 3:
+            if A != 0:
+                i = operand
+                continue
 
-    # cdv = C-Division
-    else:
-        assert opcode == 7, "ERROR"
-        C = A // (2 ** values[operand])
+        # bxc = B-Xor-C
+        elif opcode == 4:
+            B = B ^ C
+        # out
+        elif opcode == 5:
+            outputs.append(values[operand] % 8)
 
-    i += 2
+        # bdv = B-Division
+        elif opcode == 6:
+            B = A // (2 ** values[operand])
 
+        # cdv = C-Division
+        else:
+            assert opcode == 7, "ERROR"
+            C = A // (2 ** values[operand])
+
+        i += 2
+
+    return outputs
+
+
+outputs = run_program([A, B, C])
 outputs = list(map(str, outputs))
 outputs = ",".join(outputs)
-
-print("Registers: A =", A, ", B =", B, ", C =", C)
 print("Outputs:", outputs)
 
 ################################################################################
 # PART 2
+
+# n = 0
+# for suffix_length in range(1, len(program) + 1):
+
+#     for offset in range(1, suffix_length + 1):
+#         last_bits = program[-suffix_length:][-offset:]
+#         print("Last bits:", last_bits)
+
+#         pow = suffix_length - offset + 1
+
+#         searching = {
+#             n + s for s in range(8 ** (pow - 1), 8**pow, 8 ** (pow - 1))}
+#         searching = {s: run_program([s, B, C]) for s in searching}
+#         searching = {s: searching[s] for s in sorted(searching)}
+#         print(searching)
+
+#         output_last_bits = list(searching.values())
+#         output_last_bits = [b[-offset:] for b in output_last_bits]
+
+#         assert output_last_bits.count(last_bits) >= 1
+#         idx = output_last_bits.index(last_bits)
+
+#         if pow == suffix_length:
+#             n = list(searching)[idx] - n
+#         else:
+#             n = list(searching)[idx]
+#         print("n:", n)
+
+# print(run_program([n, 0, 0]))
+
+for n in range(300):
+    print("n:", n, "; base-8 n:", list(format(n, 'o')),
+          "; program:", run_program([n, 0, 0]))
