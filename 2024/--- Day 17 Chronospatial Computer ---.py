@@ -10,7 +10,6 @@ Register C: 0
 
 Program: 5,0,5,1,5,4"""
 
-# SZAR
 program = """Register A: 2024
 Register B: 0
 Register C: 0
@@ -49,6 +48,7 @@ program = list(map(int, program))
 
 ################################################################################
 # PART 1
+################################################################################
 
 
 def run_program(registers):
@@ -112,36 +112,47 @@ print("Outputs:", outputs)
 
 ################################################################################
 # PART 2
+################################################################################
 
-# n = 0
-# for suffix_length in range(1, len(program) + 1):
+# breadth-first search for the digits of A in base 8
+candidates = [[[0 for _ in range(len(program))]]]
 
-#     for offset in range(1, suffix_length + 1):
-#         last_bits = program[-suffix_length:][-offset:]
-#         print("Last bits:", last_bits)
+# i marks the position of the digit in A
+for i in range(len(program)):
 
-#         pow = suffix_length - offset + 1
+    # next stores the candidates solutions for the digit i
+    next = []
+    for c in candidates[-1]:
 
-#         searching = {
-#             n + s for s in range(8 ** (pow - 1), 8**pow, 8 ** (pow - 1))}
-#         searching = {s: run_program([s, B, C]) for s in searching}
-#         searching = {s: searching[s] for s in sorted(searching)}
-#         print(searching)
+        # try out all possible digits (0-7) for the i-th digit of A
+        for j in range(8):
+            tmp = c.copy()
+            tmp[i] = j
 
-#         output_last_bits = list(searching.values())
-#         output_last_bits = [b[-offset:] for b in output_last_bits]
+            n = list(map(str, tmp))
+            n = "".join(n)
+            n = int(n, 8)
 
-#         assert output_last_bits.count(last_bits) >= 1
-#         idx = output_last_bits.index(last_bits)
+            # test and if good, append to next
+            result = run_program([n, B, C])
+            end = -(i + 1)
+            if program[end:] == result[end:]:
+                next.append(tmp)
 
-#         if pow == suffix_length:
-#             n = list(searching)[idx] - n
-#         else:
-#             n = list(searching)[idx]
-#         print("n:", n)
+    candidates.append(next)
 
-# print(run_program([n, 0, 0]))
+# min search
+N = float("inf")
+for c in candidates[-1]:
+    n = list(map(str, c))
+    n = "".join(n)
+    n = int(n, 8)
+    result = run_program([n, B, C])
 
-for n in range(300):
-    print("n:", n, "; base-8 n:", list(format(n, 'o')),
-          "; program:", run_program([n, 0, 0]))
+    # all solutions in the end of candidates should produce the program
+    assert program == result
+
+    if n < N:
+        N = n
+
+print("N:", N)
